@@ -17,7 +17,7 @@ Don't worry we got your back
 
 Below are the steps to follow to contribute to this project:
 
-**1.**  Fork [this](https://github.com/Craftsmen-GDSC/backend) repository.   
+**1.**  Fork [this](https://github.com/Craftsmen-GDSC/craftsmen) repository.   
 
 **2.**  Clone your forked copy of the project.
 ```
@@ -37,7 +37,7 @@ npm install
 
 **5.** Add a reference(remote) to the original repository.
 ```
-git remote add upstream https://github.com/Craftsmen-GDSC/backend 
+git remote add upstream https://github.com/Craftsmen-GDSC/craftsmen 
 ```
 **6.** Check the remotes for this repository.
 ```

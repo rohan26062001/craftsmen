@@ -3,12 +3,12 @@
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)
 ![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)
 
-![GitHub forks](https://img.shields.io/github/watchers/Craftsmen-GDSC/frontend?label=watch)
-![GitHub forks](https://img.shields.io/github/forks/Craftsmen-GDSC/frontend?style=social)
-![GitHub last commit](https://img.shields.io/github/last-commit/Craftsmen-GDSC/frontend?color=red&style=social)
-![GitHub repo size](https://img.shields.io/github/repo-size/Craftsmen-GDSC/frontend?style=normal)
-![GitHub language count](https://img.shields.io/github/languages/count/Craftsmen-GDSC/frontend?style=normal)
-![GitHub top language](https://img.shields.io/github/languages/top/Craftsmen-GDSC/frontend?style=normal)
+![GitHub forks](https://img.shields.io/github/watchers/Craftsmen-GDSC/craftsmen?label=watch)
+![GitHub forks](https://img.shields.io/github/forks/Craftsmen-GDSC/craftsmen?style=social)
+![GitHub last commit](https://img.shields.io/github/last-commit/Craftsmen-GDSC/craftsmen?color=red&style=social)
+![GitHub repo size](https://img.shields.io/github/repo-size/Craftsmen-GDSC/craftsmen?style=normal)
+![GitHub language count](https://img.shields.io/github/languages/count/Craftsmen-GDSC/craftsmen?style=normal)
+![GitHub top language](https://img.shields.io/github/languages/top/Craftsmen-GDSC/craftsmen?style=normal)
 
 </div>
 
@@ -33,7 +33,7 @@ Our vision is to keep the local talent alive, and boost the economy of the regio
 
 # 👨‍💻 HOW TO CONTRIBUTE?
 
-Please visit <a href="CONTRIBUTING.MD"> Contributing.md </a>.
+Please visit CONTRIBUTING.md
 
 # 👨‍💻 TECH STACK
 
