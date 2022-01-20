@@ -1,0 +1,39 @@
+.mainLoginInput {
+  height: 45px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 20px;
+}
+
+.mainLoginInput::-webkit-input-placeholder {
+  font-family: FontAwesome;
+  font-weight: normal;
+  overflow: visible;
+  vertical-align: top;
+  display: inline-block !important;
+  padding-left: 5px;
+  padding-top: 2px;
+  color: hsl(0, 0%, 16%);
+}
+
+.mainLoginInput::-moz-placeholder {
+  font-family: FontAwesome;
+  font-weight: normal;
+  overflow: visible;
+  vertical-align: top;
+  display: inline-block !important;
+  padding-left: 5px;
+  padding-top: 2px;
+  color: hsl(0, 0%, 16%);
+}
+
+.mainLoginInput:-ms-input-placeholder {
+  font-family: FontAwesome;
+  font-weight: normal;
+  overflow: visible;
+  vertical-align: top;
+  display: inline-block !important;
+  padding-left: 5px;
+  padding-top: 2px;
+  color: hsl(0, 0%, 16%);
+}
