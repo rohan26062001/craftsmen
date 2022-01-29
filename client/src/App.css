@@ -1,231 +1,236 @@
 body {
-    font-family: 'Times New Roman', Times, serif;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .nav1 {
-    background-color: teal;
+  background-color: teal;
 }
 
 .nav1 span {
-    color: white;
-    font-size: 1rem;
-    font-weight: bolder;
+  color: white;
+  font-size: 1rem;
+  font-weight: bolder;
 }
 
 .nav-link {
-    color: red;
+  color: red;
 }
 
 .carousel-item img {
-    width: 100%;
-    height: 560px;
+  width: 100%;
+  height: 560px;
 }
 
 .gallery {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 }
 
 .gallery img {
-    width: 100%;
-    height: 500px;
+  width: 100%;
+  height: 500px;
 }
 
 .desc {
-    color: white;
-    padding: 15px;
-    text-align: center;
+  color: white;
+  padding: 15px;
+  text-align: center;
 }
 
 .absolute {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .gallery1 {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: flex-start;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
 }
 
 .galleryCard {
-    position: relative;
-    width: 350px;
-    background-color: #f5fbfd;
+  position: relative;
+  width: 350px;
+  background-color: #f5fbfd;
 }
 
 .galleryCard img {
-    width: 100%;
-    height: 300px;
+  width: 100%;
+  height: 300px;
 }
 
 .circle {
-    border-radius: 50%;
-    background-color: white;
+  border-radius: 50%;
+  background-color: white;
 }
 
 .icon {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
 }
 
 .over {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .circle:hover .over {
-    visibility: visible;
-    background-color: rgb(133, 131, 131, 0.3);
+  visibility: visible;
+  background-color: rgb(133, 131, 131, 0.3);
 }
 
 .circle:hover .icon {
-    border: 1px solid white;
-    background-color: white;
+  border: 1px solid white;
+  background-color: white;
 }
 
 #newsletter h1 {
-    font-size: 5rem;
+  font-size: 5rem;
 }
 
 #newsletter p {
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-transform: capitalize;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: capitalize;
 }
 
 .footer {
-    border-top: 2px solid #fcf5f5;
+  border-top: 2px solid #fcf5f5;
 }
 
 .socialIcon {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .white-content {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 }
 
-.goog-te-gadget>span {
-    display: none;
+.goog-te-gadget > span {
+  display: none;
 }
 
 div#\:0\.targetLanguage select {
-    border: 0px;
-    box-shadow: none;
+  border: 0px;
+  box-shadow: none;
 }
 
-.size{
-    margin-left: 2rem;
+.size {
+  margin-left: 2rem;
 }
 
-.filter-title, .sort-title{
-    font-size: 2rem;
+.filter-title,
+.sort-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-right: 2rem;
+}
+
+@media (max-width: 992px) {
+  .size {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .filter-title,
+  .sort-title {
+    font-size: 1.8rem;
     font-weight: 600;
-    margin-right: 2rem;
+    margin-right: 1rem;
+  }
+
+  .form-select {
+    font-size: medium;
+  }
 }
 
-@media (max-width:992px){
-    .size{
-        margin-left: 1rem;
-        margin-right: 1rem;
-    }
+@media (max-width: 768px) {
+  .size {
+    margin-left: 0.6rem;
+    margin-right: 0.6rem;
+  }
 
-    .filter-title, .sort-title{
-        font-size: 1.8rem;
-        font-weight: 600;
-        margin-right: 1rem;
-    }
+  .filter-title,
+  .sort-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-right: 0.6rem;
+  }
 
-    .form-select{
-        font-size: medium;
-    }
+  .form-select {
+    font-size: small;
+  }
+
+  .footer {
+    font-size: small;
+  }
 }
 
-@media (max-width:768px){
-    .size{
-        margin-left: 0.6rem;
-        margin-right: 0.6rem;
-    }
+@media (max-width: 620px) {
+  .form-select {
+    font-size: x-small;
+  }
 
-    .filter-title, .sort-title{
-        font-size: 1.4rem;
-        font-weight: 600;
-        margin-right: 0.6rem;
-    }
+  .filter-title,
+  .sort-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-right: 0.6rem;
+  }
+  .goog-te-combo {
+    font-size: x-small;
+  }
 
-    .form-select{
-        font-size: small;
-    }
-
-    .footer{
-        font-size: small;
-    }
+  .footer {
+    font-size: x-small;
+  }
 }
 
-@media (max-width:620px){
-    .form-select{
-        font-size: x-small;
-    }
+@media (max-width: 576px) {
+  #newsletter h1 {
+    font-size: 3rem;
+  }
+  #newsletter p {
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  .filter-title,
+  .sort-title {
+    font-size: medium;
+    font-weight: 600;
+    margin-right: 0.6rem;
+  }
+  .form-select {
+    font-size: medium;
+  }
 
-    .filter-title, .sort-title{
-        font-size: 1.2rem;
-        font-weight: 600;
-        margin-right: 0.6rem;
-    }
-    .goog-te-combo{
-        font-size: x-small;
-    }
+  .footer {
+    font-size: medium;
+  }
 
-    .footer{
-        font-size: x-small;
-    }
+  .shop > button {
+    font-size: xx-small;
+  }
+
+  .shop > a {
+    font-size: small;
+  }
 }
 
-@media (max-width:576px) {
-    #newsletter h1 {
-        font-size: 3rem;
-    }
-    #newsletter p {
-        font-size: 1rem;
-        font-weight: bold;
-        text-transform: capitalize;
-    }
-    .filter-title, .sort-title{
-        font-size: medium;
-        font-weight: 600;
-        margin-right: 0.6rem;
-    }
-    .form-select{
-        font-size: medium;
-    }
-
-    .footer{
-        font-size: medium;
-    }
-
-    .shop > button{
-        font-size: xx-small;
-    }
-
-    .shop > a{
-        font-size: small;
-    }
-}
-
-@media (max-width:390px){
-    .shop > button{
-        font-size: 6px;
-    }
+@media (max-width: 390px) {
+  .shop > button {
+    font-size: 6px;
+  }
 }
