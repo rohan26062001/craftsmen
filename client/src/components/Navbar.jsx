@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Searchbar from './Searchbar';
 import Sidebar from './Sidebar';
-import {Link} from 'react-router-dom';
 import './Navbar.css';
 import logo from '../assets/logo.png';
 
@@ -10,33 +9,18 @@ import { useWindowDimensions } from '../utils/windowUtils';
 export default function Navbar() {
   const [isSearchBarOpen, setIsSearchBarOpen] = useState(false);
   const [isBarOpen, setIsBarOpen] = useState(false);
-  const [isScroll, setIsScroll] = useState(false);
   const { width } = useWindowDimensions();
 
-  const navScroll = () =>{
-    var scroll = window.scrollY;
-    if(scroll >= 100){
-      setIsScroll(true);
-    }
-    else{
-      setIsScroll(false);
-    }
-  };
-
-  useEffect(() => {
-       navScroll();
-  },[])
-
-  window.addEventListener('scroll', navScroll);
-  
-
   return (
-    <nav id={isScroll?"main-navbar-solid": "main-navbar-transparent"} >
+    <nav id='main-navbar'>
+      {/* <div className='navbar-top-area'>
+        20% OFF with code 'BLVCKVDAY20' at checkout.
+      </div> */}
       {isSearchBarOpen ? (
         <Searchbar setIsSearchBarOpen={setIsSearchBarOpen} />
       ) : (
         <>
-          <div className={isScroll?'navbar-mid-area-solid':'navbar-mid-area-transparent'}>
+          <div className='navbar-mid-area'>
             <div className='navbar-icons'>
               {width > 576 ? (
                 <>
@@ -93,7 +77,7 @@ export default function Navbar() {
             </div>
             <div>
               {/* <h5 className='navbar-mid-heading'>CRAFTSMEN</h5> */}
-            <Link to='/'>  <img style={{ width: '4rem' }} src={logo} alt='Craftsmen Logo' /> </Link>
+              <img style={{ width: '4rem' }} src={logo} alt='Craftsmen Logo' />
             </div>
             <div>
               <div className='navbar-icons'>

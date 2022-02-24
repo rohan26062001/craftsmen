@@ -3,7 +3,7 @@ import { sliderItems } from '../data';
 
 const Slider = () => {
   return (
-    <section className='hero carousel-hero '>
+    <section className='hero carousel-hero mt-5'>
       <div
         id='homeHerocarousel'
         className='carousel slide carousel-fade'
