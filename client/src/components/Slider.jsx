@@ -21,7 +21,7 @@ const Slider = () => {
             />
           ))}
         </div>
-        <div className='carousel-inner h-100 mb-5'>
+        <div className='carousel-inner h-100'>
           {sliderItems.map((item) => (
             <div
               key={item.id}

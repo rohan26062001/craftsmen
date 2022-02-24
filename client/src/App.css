@@ -1,5 +1,5 @@
 body {
-  font-family: sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   background-color: #22272e;
   color: #adbac7;
 }
@@ -55,11 +55,12 @@ body {
 }
 
 #newsletter h1 {
-  font-size: 4.5rem;
+  font-size: 5rem;
 }
 
 #newsletter p {
   font-size: 1.5rem;
+  font-weight: bold;
   text-transform: capitalize;
 }
 

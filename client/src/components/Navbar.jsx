@@ -53,17 +53,11 @@ export default function Navbar() {
                     <i class='fab fa-github'></i>
                   </a>
 
-                  <a
-                    href='https://www.facebook.com/craftsmen.gdsc.iem/'
-                    className='navbar-icons-styling'
-                  >
+                  <a href='#!' className='navbar-icons-styling'>
                     <i class='fab fa-facebook-square'></i>
                   </a>
 
-                  <a
-                    href='https://twitter.com/CraftsmanO/'
-                    className='navbar-icons-styling'
-                  >
+                  <a href='#!' className='navbar-icons-styling'>
                     <i class='fab fa-twitter'></i>
                   </a>
                 </>
