@@ -1,6 +1,5 @@
 import { Add, Remove } from "@material-ui/icons";
 import styled from "styled-components";
-import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
@@ -26,10 +25,11 @@ const ProductAmount = styled.div`
 
 const Cart = () => {
   return (
-    <div>
-      <Announcement />
-      <Navbar />
-      <div className="w-100 text-center mt-3"><h1 className="fw-bold text-uppercase">your bag</h1></div>
+    <>
+    <Navbar/>
+    <div className="mt-5">
+      
+      <div className="w-100 text-center mt-5"><h1 className="fw-bold text-uppercase">your bag</h1></div>
       <div className="mt-5 container-fluid d-flex justify-content-between shop">
         <button className="me-auto p-1 p-sm-2 bg-dark text-white fw-bold">CONTINUE SHOPPING</button>
         <a className="nav-link text-nowrap" href="/#">Shopping Bag(2)</a>
@@ -110,6 +110,7 @@ const Cart = () => {
       </div>
       <Footer />
     </div>
+    </>
   );
 };
 
