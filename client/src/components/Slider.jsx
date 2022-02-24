@@ -3,7 +3,7 @@ import { sliderItems } from '../data';
 
 const Slider = () => {
   return (
-    <section className='hero carousel-hero mt-5'>
+    <section className='hero carousel-hero '>
       <div
         id='homeHerocarousel'
         className='carousel slide carousel-fade'
@@ -21,7 +21,7 @@ const Slider = () => {
             />
           ))}
         </div>
-        <div className='carousel-inner h-100 mb-5'>
+        <div className='carousel-inner h-100'>
           {sliderItems.map((item) => (
             <div
               key={item.id}
