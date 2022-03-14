@@ -13,6 +13,7 @@ const Slider = () => {
         <div className='carousel-indicators'>
           {sliderItems.map((item) => (
             <button
+              key={item.id}
               type='button'
               data-bs-target='#homeHerocarousel'
               data-bs-slide-to={item.id - 1}

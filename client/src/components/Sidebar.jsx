@@ -9,25 +9,25 @@ export default function Sidebar() {
           <div className='top-section-sidebar-item'>
             <div>MEN</div>
             <a href='#!' className='sidebar-icons-styling'>
-              <i class='fas fa-angle-right'></i>
+              <i className='fas fa-angle-right'></i>
             </a>
           </div>
           <div className='top-section-sidebar-item'>
             <div>WOMEN</div>
             <a href='#!' className='sidebar-icons-styling'>
-              <i class='fas fa-angle-right'></i>
+              <i className='fas fa-angle-right'></i>
             </a>
           </div>
           <div className='top-section-sidebar-item'>
             <div>ACSESSORIES</div>
             <a href='#!' className='sidebar-icons-styling'>
-              <i class='fas fa-angle-right'></i>
+              <i className='fas fa-angle-right'></i>
             </a>
           </div>
           <div className='top-section-sidebar-item'>
             <div>HOME</div>
             <a href='#!' className='sidebar-icons-styling'>
-              <i class='fas fa-angle-right'></i>
+              <i className='fas fa-angle-right'></i>
             </a>
           </div>
         </div>
@@ -44,26 +44,26 @@ export default function Sidebar() {
             href='https://www.instagram.com/craftsmen_gdsc/'
             className='sidebar-icons-styling'
           >
-            <i class='fab fa-instagram'></i>
+            <i className='fab fa-instagram'></i>
           </a>
           <a
             href='https://github.com/Craftsmen-GDSC/'
             className='sidebar-icons-styling'
           >
-            <i class='fab fa-github'></i>
+            <i className='fab fa-github'></i>
           </a>
           <a
             href='https://www.facebook.com/craftsmen.gdsc.iem/'
             className='sidebar-icons-styling'
           >
-            <i class='fab fa-facebook-square'></i>
+            <i className='fab fa-facebook-square'></i>
           </a>
 
           <a
             href='https://twitter.com/CraftsmanO/'
             className='sidebar-icons-styling'
           >
-            <i class='fab fa-twitter'></i>
+            <i className='fab fa-twitter'></i>
           </a>
         </div>
       </div>

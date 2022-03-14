@@ -56,7 +56,7 @@ export default function Register() {
                     style={removeOutline}
                   />
                 </div>
-                <p class='fs-6 text-center'>
+                <p className='fs-6 text-center'>
                   By creating an account, I consent to the processing of my
                   personal data in accordance with the
                   <strong> PRIVACY POLICY. </strong>

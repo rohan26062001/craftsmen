@@ -36,7 +36,7 @@ const Checkout = () => {
             </div>
             <div className='dropdown-box'>
               <span>1</span>
-              <i class='fas fa-chevron-circle-down'></i>
+              <i className='fas fa-chevron-circle-down'></i>
             </div>
             <p>$65.00</p>
           </figure>
