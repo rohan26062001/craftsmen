@@ -18,7 +18,7 @@ export default function Navbar(props) {
   // console.log(props.val);
   const [isScroll, setIsScroll] = useState(false);
   const { width } = useWindowDimensions();
-  
+
   const navScroll = () => {
     var scroll = window.scrollY;
     if (scroll >= 100) {
@@ -29,7 +29,6 @@ export default function Navbar(props) {
     }
   };
 
-
   useEffect(() => {
     navScroll();
 
@@ -37,10 +36,8 @@ export default function Navbar(props) {
 
     return () => {
       window.removeEventListener('scroll', navScroll);
-    }
-    },[]);
-
-  
+    };
+  }, []);
 
   return (
     <nav id={isScroll ? 'main-navbar-solid' : 'main-navbar-transparent'}>
