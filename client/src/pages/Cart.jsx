@@ -8,6 +8,7 @@ import { mobile } from "../responsive";
 // import { userRequest } from "../requestMethods";
 // import { useHistory } from "react-router";
 import { useSelector } from "react-redux";
+import axios from 'axios';
 
 const ProductColor = styled.div`
   width: 2rem;
@@ -45,6 +46,42 @@ const ProductPrice = styled.div`
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   // const history = useHistory();
+
+  async function payment() {
+    const API_URL = `http://localhost:5000/razorpay/`
+    const orderUrl = `${API_URL}order`;
+    const response = await axios.get(orderUrl);
+    const { data } = response;
+    console.log("App -> razorPayPaymentHandler -> data", data)
+
+    const options = {
+      key: 'rzp_test_2mEWpuhzlIO1sv',
+      name: "avdojo",
+      description: "avodojo",
+      order_id: data.id,
+      handler: async (response) => {
+        try {
+          const paymentId = response.razorpay_payment_id;
+          const url = `${API_URL}capture/${paymentId}`;
+          const captureResponse = await axios.post(url, {})
+          const successObj = JSON.parse(captureResponse.data)
+          const captured = successObj.captured;
+          console.log("App -> razorPayPaymentHandler -> captured", successObj)
+          if (captured) {
+            console.log('success')
+          }
+
+        } catch (err) {
+          console.log(err);
+        }
+      },
+      theme: {
+        color: "#686CFD",
+      },
+    };
+    const rzp1 = new window.Razorpay(options);
+    rzp1.open();
+  }
   return (
     <div className="my-5">
       <Navbar val={true} />
@@ -71,15 +108,15 @@ const Cart = () => {
                 </h5>
               </div>
               <PriceDetail>
-                  <ProductAmountContainer>
-                    <Add />
-                    <ProductAmount>{product.quantity}</ProductAmount>
-                    <Remove />
-                  </ProductAmountContainer>
-                  <ProductPrice>
-                    $ {product.price * product.quantity}
-                  </ProductPrice>
-                </PriceDetail>
+                <ProductAmountContainer>
+                  <Add />
+                  <ProductAmount>{product.quantity}</ProductAmount>
+                  <Remove />
+                </ProductAmountContainer>
+                <ProductPrice>
+                  $ {product.price * product.quantity}
+                </ProductPrice>
+              </PriceDetail>
             </div>
           ))}
         </div>
@@ -108,7 +145,7 @@ const Cart = () => {
                 </tbody>
               </table>
             </div>
-            <div className="mt-3 w-100 d-flex justify-content-center"><button className="p-2 bg-dark text-white fw-bold">CHECKOUT NOW</button></div>
+            <div className="mt-3 w-100 d-flex justify-content-center"><button onClick={payment} className="p-2 bg-dark text-white fw-bold">CHECKOUT NOW</button></div>
           </div>
         </div>
       </div>

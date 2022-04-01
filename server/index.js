@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
+const keys = require('./keys');
 
 // Routes
 const authRoute = require("./routes/auth");
@@ -10,6 +11,7 @@ const cartRoute = require("./routes/cart");
 const orderRoute = require("./routes/order");
 const productRoute = require("./routes/product");
 const userRoute = require("./routes/user");
+const razorpayRouter = require('./routes/razorpayRouter');
 
 dotenv.config();
 
@@ -26,6 +28,7 @@ app.use("/api/users", userRoute);
 app.use("/api/products", productRoute);
 app.use("/api/cart", cartRoute);
 app.use("/api/orders", orderRoute);
+app.use("/razorpay", razorpayRouter)
 
 app.listen(process.env.PORT || 5000, ()=>{
     console.log("Backend Server is running");
