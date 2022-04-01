@@ -25,6 +25,7 @@ const Error = styled.span`
 `;
 
 export default function Login() {
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
@@ -65,13 +66,13 @@ export default function Login() {
                   />
                 </div>
                 <div className='d-flex justify-content-center'>
+
                   <button
                     type='submit'
                     className='btn btn-success w-50'
                     onClick={handleClick}
                     disabled={isFetching}
-                  >
-                    Login
+                    > Login
                   </button>
                   {error && <Error>Something went wrong...</Error>}
                 </div>

@@ -19,6 +19,7 @@ const Categories = () => {
     <div
       className='d-flex align-items-center justify-content-center'
       style={{
+
         marginTop: '14rem',
         marginBottom: '2rem',
       }}
