@@ -25,15 +25,16 @@ const Error = styled.span`
 `;
 
 export default function Login() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const dispatch = useDispatch();
   const { isFetching, error } = useSelector((state) => state.user);
 
-  const handleClick = (e)=>{
+  const handleClick = (e) => {
     e.preventDefault();
-    login(dispatch, {username, password});
-  }
+    login(dispatch, { username, password });
+  };
   return (
     <div className='container-fluid' style={myStyle}>
       <div className='row justify-content-center pt-5'>
@@ -65,10 +66,13 @@ export default function Login() {
                   />
                 </div>
                 <div className='d-flex justify-content-center'>
-                  <button type='submit' className='btn btn-success w-50'
-                    onClick={handleClick} disabled={isFetching}
-                  >
-                    Login
+
+                  <button
+                    type='submit'
+                    className='btn btn-success w-50'
+                    onClick={handleClick}
+                    disabled={isFetching}
+                    > Login
                   </button>
                   {error && <Error>Something went wrong...</Error>}
                 </div>
