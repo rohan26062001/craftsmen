@@ -4,11 +4,12 @@ import styled from "styled-components";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
-// import { useEffect, useState } from "react";
+import { useEffect } from "react";
 // import { userRequest } from "../requestMethods";
 // import { useHistory } from "react-router";
-import { useSelector } from "react-redux";
 import axios from 'axios';
+import { decreaseCart, increaseCart, getTotals, clearCart } from "../redux/cartRedux";
+import { useDispatch, useSelector } from "react-redux";
 
 const ProductColor = styled.div`
   width: 2rem;
@@ -45,6 +46,11 @@ const ProductPrice = styled.div`
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getTotals());
+  }, [cart, dispatch]);
   // const history = useHistory();
 
   async function payment() {
@@ -82,6 +88,17 @@ const Cart = () => {
     const rzp1 = new window.Razorpay(options);
     rzp1.open();
   }
+  const handleDecreaseCart = (product) => {
+    dispatch(decreaseCart(product));
+  };
+
+  const handleIncreaseCart = (product) => {
+    dispatch(increaseCart(product));
+  };
+
+  const handleClearCart = () => {
+    dispatch(clearCart());
+  };
   return (
     <div className="my-5">
       <Navbar val={true} />
@@ -108,15 +125,15 @@ const Cart = () => {
                 </h5>
               </div>
               <PriceDetail>
-                <ProductAmountContainer>
-                  <Add />
-                  <ProductAmount>{product.quantity}</ProductAmount>
-                  <Remove />
-                </ProductAmountContainer>
-                <ProductPrice>
-                  $ {product.price * product.quantity}
-                </ProductPrice>
-              </PriceDetail>
+                  <ProductAmountContainer>
+                    <Add onClick={() => handleIncreaseCart(product)}/>
+                    <ProductAmount>{product.quantity}</ProductAmount>
+                    <Remove onClick={() => handleDecreaseCart(product)}/>
+                  </ProductAmountContainer>
+                  <ProductPrice>
+                    $ {product.price * product.quantity}
+                  </ProductPrice>
+                </PriceDetail>
             </div>
           ))}
         </div>
@@ -146,6 +163,7 @@ const Cart = () => {
               </table>
             </div>
             <div className="mt-3 w-100 d-flex justify-content-center"><button onClick={payment} className="p-2 bg-dark text-white fw-bold">CHECKOUT NOW</button></div>
+            <div className="mt-3 w-100 d-flex justify-content-center"><button onClick={() => handleClearCart()} className="p-2 bg-dark text-white fw-bold">CLEAR CART</button></div>
           </div>
         </div>
       </div>

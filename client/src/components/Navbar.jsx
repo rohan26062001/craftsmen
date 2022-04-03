@@ -5,13 +5,14 @@ import Sidebar from './Sidebar';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import { ShoppingCartOutlined } from '@material-ui/icons';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import logo from '../assets/logo.png';
-
+import {getTotals } from "../redux/cartRedux";
 import { useWindowDimensions } from '../utils/windowUtils';
 
 export default function Navbar(props) {
-  const quantity = useSelector((state) => state.cart.quantity);
+  const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
   const [isSearchBarOpen, setIsSearchBarOpen] = useState(false);
   const [isBarOpen, setIsBarOpen] = useState(false);
   // const value = props.val;
@@ -38,6 +39,12 @@ export default function Navbar(props) {
       window.removeEventListener('scroll', navScroll);
     };
   }, []);
+    
+
+  useEffect(() => {
+    dispatch(getTotals());
+  }, [cart, dispatch]);
+
 
   return (
     <nav id={isScroll ? 'main-navbar-solid' : 'main-navbar-transparent'}>
@@ -137,7 +144,7 @@ export default function Navbar(props) {
                 )}
 
                 <Link to='/cart' style={{ color: 'white' }}>
-                  <Badge badgeContent={quantity} color='primary'>
+                  <Badge badgeContent={cart.quantity} color='primary'>
                     <ShoppingCartOutlined />
                   </Badge>
                 </Link>
