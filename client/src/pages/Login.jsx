@@ -81,7 +81,7 @@ export default function Login() {
                 </div>
                 <div className='d-flex justify-content-center my-2'>
                   Don't have an account?&nbsp;
-                  <a href='https://www.google.com/'>
+                  <a href='/register'>
                     <strong>Sign Up</strong>
                   </a>
                 </div>
