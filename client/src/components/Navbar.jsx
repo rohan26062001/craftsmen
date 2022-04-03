@@ -129,9 +129,9 @@ export default function Navbar(props) {
             </div>
             <div>
               <div className='navbar-icons'>
-                <a href='/login' className='navbar-icons-styling'>
+                <Link to='/login' className='navbar-icons-styling'>
                   <i className='far fa-user'></i>
-                </a>
+                </Link>
 
                 {width > 576 && (
                   <a
@@ -153,18 +153,18 @@ export default function Navbar(props) {
           </div>
           {width > 576 && (
             <div className='navbar-bottom-area'>
-              <a href="/products/men" className='navbar-menu-item-container'>
+              <Link to="/products/men" className='navbar-menu-item-container'>
                 <div className='navbar-menu-items'>MEN</div>
-              </a>
-              <a href="/products/women" className='navbar-menu-item-container'>
+              </Link>
+              <Link to="/products/women" className='navbar-menu-item-container'>
                 <div className='navbar-menu-items'>WOMEN</div>
-              </a>
-              <a href="/products/baby" className='navbar-menu-item-container'>
+              </Link>
+              <Link to="/products/baby" className='navbar-menu-item-container'>
                 <div className='navbar-menu-items'>BABY</div>
-              </a>
-              <a href="/" className='navbar-menu-item-container'>
+              </Link>
+              <Link to="/" className='navbar-menu-item-container'>
                 <div className='navbar-menu-items'>HOME</div>
-              </a>
+              </Link>
             </div>
           )}
           {isBarOpen ? <Sidebar setIsBarOpen={setIsBarOpen} /> : <></>}

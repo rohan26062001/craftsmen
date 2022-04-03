@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import axios from 'axios';
 import { decreaseCart, increaseCart, getTotals, clearCart } from "../redux/cartRedux";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const ProductColor = styled.div`
   width: 2rem;
@@ -29,7 +30,7 @@ const PriceDetail = styled.div`
 const ProductAmountContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 1.2rem;
 `;
 
 const ProductAmount = styled.div`
@@ -54,7 +55,7 @@ const Cart = () => {
   // const history = useHistory();
 
   async function payment() {
-    const API_URL = `http://localhost:5000/razorpay/`
+    const API_URL = `https://craftsmengdsc.herokuapp.com/razorpay/`
     const orderUrl = `${API_URL}order`;
     const response = await axios.get(orderUrl);
     const { data } = response;
@@ -64,7 +65,7 @@ const Cart = () => {
       key: 'rzp_test_2mEWpuhzlIO1sv',
       name: "Craftsmen",
       description: "Craftsmen",
-      order_id: data.id,
+      order_id: data._id,
       handler: async (response) => {
         try {
           const paymentId = response.razorpay_payment_id;
@@ -104,8 +105,8 @@ const Cart = () => {
       <Navbar val={true} />
       <div className="w-100 text-center mt-3"><h1 className="fw-bold text-uppercase">your bag</h1></div>
       <div className="mt-5 container-fluid d-flex justify-content-between shop">
-        <button className="me-auto p-1 p-sm-2 bg-dark text-white fw-bold"><a style={{color:'white'}} href="/">CONTINUE SHOPPING</a></button>
-        <button className="ms-auto p-1 p-sm-2 bg-dark text-white fw-bold">CHECKOUT NOW</button>
+        <button className="me-auto p-1 p-sm-2 bg-dark text-white fw-bold"><Link style={{color:'white'}} to="/">CONTINUE SHOPPING</Link></button>
+        <button onClick={payment} className="ms-auto p-1 p-sm-2 bg-dark text-white fw-bold">CHECKOUT NOW</button>
       </div>
       <div className="row w-100 mt-5 mb-5 px-4">
         <div className="col-md-8">

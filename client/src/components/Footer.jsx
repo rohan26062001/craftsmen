@@ -124,12 +124,12 @@ export default function App() {
               </div>
               <div className='d-flex justify-content-center'>
                 <i className='fas fa-phone me-3'></i>
-                <p>+ 01 234 567 88</p>
+                <p>+91 7044948954</p>
               </div>
-              <div className='d-flex justify-content-center'>
+              {/* <div className='d-flex justify-content-center'>
                 <i className='fas fa-print me-3'></i>
                 <p>+ 01 234 567 89</p>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
