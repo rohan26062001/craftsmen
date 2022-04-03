@@ -9,29 +9,32 @@ import { addProduct } from '../redux/cartRedux';
 import { useDispatch } from 'react-redux';
 // import { products } from "../data";
 
-const Container = styled.div``;
-
-const Wrapper = styled.div`
-  padding: 50px;
+const Container = styled.div`
   display: flex;
-  ${mobile({ padding: '10px', flexDirection: 'column' })}
+  justify-content: center;
 `;
 
-const ImgContainer = styled.div`
-  flex: 1;
+const Wrapper = styled.div`
+  display: flex;
+  ${mobile({ padding: '1rem', flexDirection: 'column' })}
 `;
 
 const Image = styled.img`
-  width: 100%;
-  height: 90vh;
+  width: 50%;
   object-fit: cover;
   ${mobile({ height: '40vh' })}
 `;
 
 const InfoContainer = styled.div`
-  flex: 1;
-  padding: 0px 50px;
-  ${mobile({ padding: '10px' })}
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 2rem;
+  @media (max-width: 36em) {
+    padding: 2rem;
+  }
+  ${mobile({ padding: '1rem' })}
 `;
 
 const Title = styled.h1`
@@ -39,18 +42,25 @@ const Title = styled.h1`
 `;
 
 const Desc = styled.p`
-  margin: 20px 0px;
+  margin: 1.2rem 0;
 `;
 
 const Price = styled.span`
   font-weight: 100;
-  font-size: 40px;
+  font-size: 2.5rem;
+  @media (max-width: 48em) {
+    font-size: 1.8rem;
+  }
+  @media (max-width: 36em) {
+    font-size: 1.2rem;
+  }
 `;
 
 const FilterContainer = styled.div`
   width: 50%;
-  margin: 30px 0px;
+  margin: 2rem 0;
   display: flex;
+  gap: 1rem;
   justify-content: space-between;
   ${mobile({ width: '100%' })}
 `;
@@ -61,33 +71,31 @@ const Filter = styled.div`
 `;
 
 const FilterTitle = styled.span`
-  font-size: 20px;
+  font-size: 1.2rem;
   font-weight: 200;
+  @media (max-width: 48em) {
+    font-size: 0.8rem;
+  }
+  @media (max-width: 36em) {
+    font-size: 0.6rem;
+  }
 `;
 
 const FilterColor = styled.div`
-  width: 20px;
-  height: 20px;
+  width: 1.2rem;
+  height: 1.2rem;
   border-radius: 50%;
   background-color: ${(props) => props.color};
-  margin: 0px 5px;
+  margin: 0 0.4rem;
   cursor: pointer;
 `;
 
 const FilterSize = styled.select`
-  margin-left: 10px;
-  padding: 5px;
+  margin-left: 0.9rem;
+  padding: 0.3rem;
 `;
 
 const FilterSizeOption = styled.option``;
-
-const AddContainer = styled.div`
-  width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  ${mobile({ width: '100%' })}
-`;
 
 const AmountContainer = styled.div`
   display: flex;
@@ -96,26 +104,28 @@ const AmountContainer = styled.div`
 `;
 
 const Amount = styled.span`
-  width: 30px;
-  height: 30px;
-  border-radius: 10px;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.6rem;
   border: 1px solid teal;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0px 5px;
+  margin: 0 0.3rem;
 `;
 
 const Button = styled.button`
-  padding: 15px;
-  border: 2px solid teal;
-  background-color: white;
-  cursor: pointer;
-  font-weight: 500;
-  &:hover {
-    background-color: #f8f4f4;
-  }
+  color: white;
+  background-color: #000;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
+
+const BottomContainer = styled.div`
+
+`
 
 const ProductDetails = () => {
   const location = useLocation();
@@ -150,32 +160,30 @@ const ProductDetails = () => {
   return (
     <Container>
       <Wrapper>
-        <ImgContainer>
-          <Image src={product.img} />
-        </ImgContainer>
+        <Image src={product.img} />
         <InfoContainer>
+          <BottomContainer>
           <Title>{product.title}</Title>
           <Desc>{product.desc}</Desc>
-          <Price>$ {product.price}</Price>
-          <FilterContainer>
-            <Filter>
-              <FilterTitle>Color</FilterTitle>
-              {product.color?.map((c) => (
-                <FilterColor color={c} key={c} onClick={() => setColor(c)} />
-              ))}
-            </Filter>
-            <Filter>
-              <FilterTitle>Size</FilterTitle>
-              <FilterSize onChange={(e) => setSize(e.target.value)}>
-                {product.size?.map((s) => (
-                  <FilterSizeOption key={s}>{s}</FilterSizeOption>
+            <Price>$ {product.price}</Price>
+            <FilterContainer>
+              <Filter>
+                <FilterTitle>Color</FilterTitle>
+                {product.color?.map((c) => (
+                  <FilterColor color={c} key={c} onClick={() => setColor(c)} />
                 ))}
-              </FilterSize>
-            </Filter>
-          </FilterContainer>
-          <AddContainer>
+              </Filter>
+              <Filter>
+                <FilterTitle>Size</FilterTitle>
+                <FilterSize onChange={(e) => setSize(e.target.value)}>
+                  {product.size?.map((s) => (
+                    <FilterSizeOption key={s}>{s}</FilterSizeOption>
+                  ))}
+                </FilterSize>
+              </Filter>
+            </FilterContainer>
             <Button onClick={handleClick}>ADD TO CART</Button>
-          </AddContainer>
+          </BottomContainer>
         </InfoContainer>
       </Wrapper>
     </Container>
